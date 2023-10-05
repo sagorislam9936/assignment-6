@@ -11,4 +11,70 @@ body {
     text-align: center;
     padding-top: 50px;
   }
+  /* Search By Country Name section style */
+  .borderr {
+    width: 40%;
+  
+    margin: auto;
+    margin-bottom: 20px;
+  }
+
+
+.Flex {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  #btnForCountry {
+    margin: auto;
+    text-align: center;
+    width: 155px;
+    color: green;
+    padding: 0px;
+    font-size: 20px;
+    background-color: rgb(184, 160, 148);
+    border-radius: 100px;
+  }
+  #btnForCountry:hover {
+    padding: 5px;
+    background-color: red;
+    color: white;
+  }
+  
+  #CountryName {
+    margin: auto;
+    text-align: center;
+    width: 205px;
+  
+    border-radius: 100px;
+    font-size: 15px;
+  }
+  #CountryName:hover {
+    padding-left: 10px;
+    font-size: 25px;
+    border: 2px solid red;
+    background-color: aqua;
+    color: black;
+  }
+
+
+
+
+
+
+
+
+
+
+
+ /*  responsive this website */
+
+ @media screen and (max-width: 770px) {
+    .borderr {
+      width: 96%;
+  
+      margin: auto;
+      margin-bottom: 20px;
+    }
+  }
   

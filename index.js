@@ -1,3 +1,9 @@
+
+const CountryName = document.getElementById("CountryName");
+const btnForCountry = document.getElementById("btnForCountry");
+const ViewCountry = document.getElementById("ViewCountry");
+
+
 const signleCountry = document.getElementById("singleCountry");
 
 const users = document.getElementById("users");
@@ -7,7 +13,53 @@ const Errorr = document.getElementById("Errorr");
 
 
 
+/* Search by country name section */
 
+const showCountry = async () => {
+  const name = CountryName.value;
+  loading.innerHTML = "Loading....";
+  try {
+    await fetch(`https://restcountries.com/v3.1/name/${name}`)
+      .then((response) => response.json())
+
+      .then((json) => searchCountries(json));
+    loading.innerHTML = "";
+  } catch (error) {
+    Errorr.innerHTML = "Error";
+  }
+};
+
+const searchCountries = async (countries) => {
+  ViewCountry.innerHTML = "";
+  console.log(countries);
+  await countries.map((country) => {
+    const {
+      name: { common: countryName },
+      capital,
+      population,
+      region,
+      flags: { png },
+    } = country;
+    const newDiv = document.createElement("div");
+    newDiv.classList.add("m-auto");
+    newDiv.innerHTML = `
+    <div class="py-3  ">
+    <div class="card  bg-secondary-subtle text-center shadow rounded-5 p-1 ">
+  <div class="card-body  text-primary-emphasis ">
+  <img src=${png} style="width:75px">
+  <h2 class="fs-2 " style=color:red;>Name: ${countryName}</h2>
+  <h4>Capital: ${capital}</h4>
+  <h4>Region: ${region}</h4>
+  <h4>Population: ${population}</h4>
+  <button class="fs-2 pe-3 ps-3 bg-info text-light rounded-5" onclick="showSingleCountry ('${countryName}')">
+  Details</button>
+  </div>
+  </div>
+  </div>`;
+
+    ViewCountry.appendChild(newDiv);
+  });
+};
 
 
 
