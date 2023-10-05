@@ -88,8 +88,15 @@ body {
   }
 
 
-
-
+/* Responsive for phone */
+  @media screen and (max-width: 770px) {
+    .borderr {
+      width: 96%;
+  
+      margin: auto;
+      margin-bottom: 20px;
+    }
+  }
 
 
 
