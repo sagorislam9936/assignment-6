@@ -13,7 +13,6 @@ Feature 2:
 We can Learn about all country .
 
 Feature 3:
-
 We can see country map from here.
 
 ## Live Link
