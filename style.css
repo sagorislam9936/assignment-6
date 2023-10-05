@@ -1,0 +1,14 @@
+body {
+    background-image: url(/im2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+
+
+#users {
+    font-size: 30px;
+    text-align: center;
+    padding-top: 50px;
+  }
+  
