@@ -1,102 +1,90 @@
+/* body section */
+
 body {
-    background-image: url(/im2.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
+  background-image: url(/im2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
 /* Random website users section style*/
-
+.hvr:hover {
+  cursor: pointer;
+}
 .borderr {
-    width: 40%;
-  
-    margin: auto;
-    margin-bottom: 20px;
-  }
-  
-  #btn {
-    margin-top: 0px;
-    border: 1.5px solid rgb(11, 57, 57);
-    color: red;
-    background-color: aqua;
-    border-radius: 30px;
-    padding-bottom: 5px;
-    padding-left: 10px;
-    padding-right: 10px;
-  }
-  
-  #btn:hover {
-    font-size: 30px;
-  
-    color: blue;
-    background-color: chocolate;
-    cursor: pointer;
-  }
+  width: 40%;
+  margin: auto;
+  margin-bottom: 20px;
+}
 
+#btn {
+  margin-top: 0px;
+  border: 1.5px solid rgb(11, 57, 57);
+  color: red;
+  background-color: aqua;
+  border-radius: 30px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+}
 
+#btn:hover {
+  font-size: 30px;
+  color: blue;
+  background-color: rgb(230, 236, 221);
+  cursor: pointer;
+}
 
-  /* Search By Country Name section style */
-  .borderr {
-    width: 40%;
-  
-    margin: auto;
-    margin-bottom: 20px;
-  }
-
+/* Search By Country Name section style */
 
 .Flex {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-  #btnForCountry {
-    margin: auto;
-    text-align: center;
-    width: 155px;
-    color: green;
-    padding: 0px;
-    font-size: 20px;
-    background-color: rgb(184, 160, 148);
-    border-radius: 100px;
-  }
-  #btnForCountry:hover {
-    padding: 5px;
-    background-color: red;
-    color: white;
-  }
-  
-  #CountryName {
-    margin: auto;
-    text-align: center;
-    width: 205px;
-  
-    border-radius: 100px;
-    font-size: 15px;
-  }
-  #CountryName:hover {
-    padding-left: 10px;
-    font-size: 25px;
-    border: 2px solid red;
-    background-color: aqua;
-    color: black;
-  }
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+#btnForCountry {
+  border: none;
+  color: red;
+  margin: auto;
+  text-align: center;
+  width: 155px;
+  font-size: 20px;
+  padding: 0px;
+  padding-bottom: 3px;
+  background-color: aqua;
+  border-radius: 100px;
+}
+#btnForCountry:hover {
+  padding: 5px;
+  background-color: red;
+  color: white;
+}
 
+#CountryName {
+  margin: auto;
+  text-align: center;
+  width: 205px;
+  border-radius: 100px;
+  font-size: 15px;
+}
+#CountryName:hover {
+  padding-left: 10px;
+  font-size: 25px;
+  border: 2px solid red;
+  background-color: aqua;
+  color: black;
+}
 
-
-  #users {
-    font-size: 30px;
-    text-align: center;
-    padding-top: 50px;
-  }
-
+#users {
+  font-size: 30px;
+  text-align: center;
+  padding-top: 50px;
+}
 
 /* Responsive for phone */
-  @media screen and (max-width: 770px) {
-    .borderr {
-      width: 96%;
-  
-      margin: auto;
-      margin-bottom: 20px;
-    }
+@media screen and (max-width: 770px) {
+  .borderr {
+    width: 99%;
+    margin: auto;
+    margin-bottom: 20px;
   }
-
-
-
+}

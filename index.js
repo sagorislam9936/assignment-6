@@ -1,4 +1,5 @@
 const loading = document.getElementById("loading");
+const Errorr = document.getElementById("Errorr");
 const btn = document.getElementById("btn");
 const showUser = document.getElementById("showUser");
 
@@ -6,11 +7,10 @@ const CountryName = document.getElementById("CountryName");
 const btnForCountry = document.getElementById("btnForCountry");
 const ViewCountry = document.getElementById("ViewCountry");
 
-
 const signleCountry = document.getElementById("singleCountry");
 
 const users = document.getElementById("users");
-const Errorr = document.getElementById("Errorr");
+
 
 /* user section JavaScript */
 
@@ -27,6 +27,7 @@ const SingleUser = async () => {
 };
 
 const userDetails = (users) => {
+   showUser.innerHTML = "";
   console.log(users);
   users.map((user) => {
     const {
@@ -52,13 +53,9 @@ const userDetails = (users) => {
 </div>
   </div>
   </div>`;
-    showUser.innerHTML = "";
     showUser.appendChild(newDiv);
   });
 };
-
-
-
 
 /* Search by country name section */
 
@@ -76,10 +73,10 @@ const showCountry = async () => {
   }
 };
 
-const searchCountries = async (countries) => {
+const searchCountries =  (countries) => {
   ViewCountry.innerHTML = "";
   console.log(countries);
-  await countries.map((country) => {
+   countries.map((country) => {
     const {
       name: { common: countryName },
       capital,
@@ -90,7 +87,7 @@ const searchCountries = async (countries) => {
     const newDiv = document.createElement("div");
     newDiv.classList.add("m-auto");
     newDiv.innerHTML = `
-    <div class="py-3  ">
+    <div class="py-3">
     <div class="card  bg-secondary-subtle text-center shadow rounded-5 p-1 ">
   <div class="card-body  text-primary-emphasis ">
   <img src=${png} style="width:75px">
@@ -103,15 +100,12 @@ const searchCountries = async (countries) => {
   </div>
   </div>
   </div>`;
-
     ViewCountry.appendChild(newDiv);
   });
 };
 
-
-
-
 /* Show All Country Section JavaScript */
+
 const showSingleCountry = async (countryName) => {
   loading.innerHTML = "Loading....";
   signleCountry.innerHTML = "";
@@ -144,13 +138,9 @@ const showSingleCountry = async (countryName) => {
 <p>Independent: ${independent}</p>
 <p>Latlng: ${latlng}</p>
 <p>Status: ${status}</p>
-<ul style=:text-align:center;;>
-<li>
 <p>Languages: ${eng}</p>
-</li>
-<li><p>Timezones: ${timezones}</p></li>
-</li>
-</ul>
+<p>Timezones: ${timezones}</p>
+<ul style=:text-align:center;;>
 <a class="text-danger" href=${googleMaps}>Country Map</a>
 </div>
   </div>`;
@@ -159,36 +149,29 @@ const showSingleCountry = async (countryName) => {
     });
 };
 
-
-
-
-
-
-
-
 try {
-    loading.innerHTML = "Loading....";
-    fetch("https://restcountries.com/v3.1/all")
-      .then((response) => response.json())
-      .then((json) => showAllCountries(json));
-    loading.innerHTML = "";
-  } catch (error) {
-    Errorr.innerHTML = "Error";
-  }
-  
-  const showAllCountries = async (countries) => {
-    console.log(countries);
-    await countries.map((country) => {
-      const {
-        name: { common: countryName },
-        capital,
-        population,
-        region,
-        flags: { png },
-      } = country;
-      const newDiv = document.createElement("div");
-      newDiv.classList.add("col-sm-4");
-      newDiv.innerHTML = `
+  loading.innerHTML = "Loading....";
+  fetch("https://restcountries.com/v3.1/all")
+    .then((response) => response.json())
+    .then((json) => showAllCountries(json));
+  loading.innerHTML = "";
+} catch (error) {
+  Errorr.innerHTML = "Error";
+}
+
+const showAllCountries = async (countries) => {
+
+  await countries.map((country) => {
+    const {
+      name: { common: countryName },
+      capital,
+      population,
+      region,
+      flags: { png },
+    } = country;
+    const newDiv = document.createElement("div");
+    newDiv.classList.add("col-sm-4");
+    newDiv.innerHTML = `
       <div class="py-3 h-100 ">
       <div class="card  h-100 bg-secondary-subtle text-center shadow rounded-5 p-1 ">
     <div class="card-body  text-primary-emphasis ">
@@ -202,11 +185,6 @@ try {
     </div>
     </div>
     </div>`;
-      users.appendChild(newDiv);
-    });
-  };
- 
-  
-  
-  
-  
+    users.appendChild(newDiv);
+  });
+};
