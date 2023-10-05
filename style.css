@@ -3,14 +3,36 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
   }
+/* Random website users section style*/
 
-
-
-#users {
-    font-size: 30px;
-    text-align: center;
-    padding-top: 50px;
+.borderr {
+    width: 40%;
+  
+    margin: auto;
+    margin-bottom: 20px;
   }
+  
+  #btn {
+    margin-top: 0px;
+    border: 1.5px solid rgb(11, 57, 57);
+    color: red;
+    background-color: aqua;
+    border-radius: 30px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+  
+  #btn:hover {
+    font-size: 30px;
+  
+    color: blue;
+    background-color: chocolate;
+    cursor: pointer;
+  }
+
+
+
   /* Search By Country Name section style */
   .borderr {
     width: 40%;
@@ -59,22 +81,15 @@ body {
 
 
 
-
-
-
-
-
-
-
-
- /*  responsive this website */
-
- @media screen and (max-width: 770px) {
-    .borderr {
-      width: 96%;
-  
-      margin: auto;
-      margin-bottom: 20px;
-    }
+  #users {
+    font-size: 30px;
+    text-align: center;
+    padding-top: 50px;
   }
-  
+
+
+
+
+
+
+

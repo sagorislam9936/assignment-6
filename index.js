@@ -1,3 +1,6 @@
+const loading = document.getElementById("loading");
+const btn = document.getElementById("btn");
+const showUser = document.getElementById("showUser");
 
 const CountryName = document.getElementById("CountryName");
 const btnForCountry = document.getElementById("btnForCountry");
@@ -9,6 +12,50 @@ const signleCountry = document.getElementById("singleCountry");
 const users = document.getElementById("users");
 const Errorr = document.getElementById("Errorr");
 
+/* user section JavaScript */
+
+const SingleUser = async () => {
+  loading.innerHTML = "Loading....";
+  try {
+    await fetch("https://randomuser.me/api/?results=1")
+      .then((response) => response.json())
+      .then((data) => userDetails(data.results));
+    loading.innerHTML = "";
+  } catch (error) {
+    Errorr.innerHTML = "Error";
+  }
+};
+
+const userDetails = (users) => {
+  console.log(users);
+  users.map((user) => {
+    const {
+      picture: { medium },
+      name: { title, first, last },
+      gender,
+      email,
+      phone,
+    } = user;
+
+    const newDiv = document.createElement("div");
+    newDiv.classList.add("col-sm-12");
+    newDiv.innerHTML = `
+    <div class="py-3  ">
+    <div class="card   bg-secondary-subtle text-center shadow rounded-5 p-1 ">
+  <div class="card-body  text-primary-emphasis ">
+<img src="${medium}" alt="user pic" style="width: 75px;">
+<h5 style=" padding-top: 30px;">User Full Details</h5>
+<h2 class="text-danger py-1">${title} ${first} ${last}</h2>
+<h4>${gender} </h4>
+<h4>${email} </h4>
+<h4>${phone} </h4>
+</div>
+  </div>
+  </div>`;
+    showUser.innerHTML = "";
+    showUser.appendChild(newDiv);
+  });
+};
 
 
 
